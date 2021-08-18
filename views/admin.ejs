@@ -1,0 +1,26 @@
+<%-include ('header.ejs') %>
+
+  <h1 class=" text-center my-5 text-white ">New Article</h1>
+  <form action="/admin" method="POST">
+    <input type="text" name="title" class="form-control my-3" placeholder="Add title">
+    <textarea name="blog" class="form-control my-3" placeholder="Add new article" rows="10"></textarea>
+    <button class="btn btn-danger w-100 text-white">Add Article</button>
+  </form>
+
+  <div class="row">
+    <% data.forEach(element => { %>
+    <div class="col-lg-4 text-center">
+      <div class="card mt-5">
+        <div class="card-body ">
+          <h5 class="card-title"> <%=element.title %> </h5>
+          <p class="card-text"> <%=element.blog%> </p>
+          <a  href="readmore/<%=element.id%> " class="card-link btn btn-info">Read more</a>
+          <a  href="delete/<%=element.id%> " class="card-link btn btn-danger">Delete</a>
+          <a  href="update/<%=element.id%> " class="card-link btn btn-dark">Update</a>
+          <h6 class="card-subtitle mt-3 text-muted"><%=element.blog_date%></h6>
+        </div>
+      </div>
+    </div>
+    <% }) %> 
+    </div>
+  <%-include ('footer.ejs') %>

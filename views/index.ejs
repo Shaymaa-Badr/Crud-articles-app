@@ -1,0 +1,25 @@
+<%-include ('header.ejs') %>
+<!-- Search form -->
+<h1 class="text-white text-center">Blogs</h1>
+    <form action="/search" method="POST" class="d-flex">
+        <input class="form-control mr-2" name="term" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info" type="submit">Search</button>
+    </form>
+<!-- Articles -->
+<div class="row mt-5">
+<% data.forEach(element => { %>
+<div class="col-lg-4 text-center my-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%=element.title %> </h5>
+      <p class="card-text"><%=element.blog%> </p>
+      <a  href="readmore/<%=element.id%> " class="card-link btn btn-info">Read more</a>
+      <h6 class="card-subtitle mt-2 text-muted"><%=element.blog_date%></h6>  
+    </div>
+  </div>
+</div>
+<% }) %> 
+</div>
+
+
+<%-include('footer.ejs') %>

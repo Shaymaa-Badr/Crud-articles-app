@@ -1,0 +1,11 @@
+<%-include('header.ejs') %>
+
+    <h1 class=" text-center my-5 text-white">Update Blog</h1>
+    <form action="/updateblog/<%=data.id %>" method="POST">
+        <input value="<%=data.title  %> " type="text" name="title" class="form-control my-3" placeholder="Your Title">
+        <textarea value="<%=data.blog %>" name="blog" class="form-control my-3" placeholder="Add new article"
+            rows="10"></textarea>
+            <button class="btn btn-danger w-100 text-white">Add Article</button>
+    </form>
+
+    <%-include('footer.ejs') %>
